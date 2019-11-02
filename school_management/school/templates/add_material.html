@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block title %}إضافة مادة{% endblock title %}
+{% block content %}
+<div class="container text-center">
+    <form action="{% url 'add_material' %}" method="POST">
+        {% crispy_forms %}
+        {% csrf_token %}
+        <input type="submit" value="إضافة">
+    </form>
+</div>
+{% endblock content %}    

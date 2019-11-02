@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}الرئيسية{% endblock title %}
+{% block content %}
+<div class="home-container" style="margin: 200px auto;">
+    <div>
+        <h1>تطبيق تنظيم جدولة لمدرسة</h1>
+    </div>
+    <div class="navigation">
+        <div class="study-link">
+            <a href="studytable/">عرض جدول الدروس</a>
+        </div>
+        <div class="teacher-link">
+            <a href="{% url 'teachertable' %}">عرض جدول التدريس</a>
+        </div>
+    </div>
+    
+</div>    
+
+{% endblock content %}

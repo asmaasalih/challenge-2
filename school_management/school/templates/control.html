@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}لوحة التحكم{% endblock title %}
+{% block content %}
+<div class="container" style="margin-top: 80px;">
+    <h1 class="text-center" style="margin-bottom: 30px;">لوحة التحكم</h1>
+    <div>
+        <ul class="navo">
+            <li><a href="{% url 'categories' %}">الاقسام</a></li>
+            <li><a href="{% url 'teachers' %}">المدرسين</a></li>
+            <li><a href="{% url 'materials' %}">المواد</a></li>
+        </ul>
+    </div>
+    {% if categories %}
+    <div class="dark-area">
+        <div class="add-btn text-right"><a href="{% url 'add_category' %}">إضافة</a></div>
+        <hr>
+        {% for cat in categories %}
+        <div class="item">
+            <p class="text-right font-weight-bold">{{cat.name}}</p>
+            <div class="text-left row">
+                <div class="edit"><a href="{% url 'edit_category' cat.pk %}">تعديل</a></div>
+                <div class="delete"><a href="{% url 'delete_category' cat.pk %}">حذف</a></div>
+            </div>
+        </div>
+        <hr>
+        {% endfor %}
+    </div>
+    {% elif teachers %}
+    <div class="dark-area">
+        <div class="add-btn text-right"><a href="{% url 'add_teacher' %}">إضافة</a></div>
+        <hr>
+        {% for teacher in teachers %}
+        <div class="item">
+            <p class="text-right font-weight-bold">{{teacher.name}}</p>
+            <div class="text-left row">
+                <div class="edit"><a href="{% url 'edit_teacher' teacher.pk %}">تعديل</a></div>
+                <div class="delete"><a href="{% url 'delete_teacher' teacher.pk %}">حذف</a></div>
+            </div>
+        </div>
+        <hr>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="dark-area">
+        <div class="add-btn text-right"><a href="{% url 'add_material' %}">إضافة</a></div>
+        <hr>
+        {% for mat in materials %}
+        <div class="item">
+            <div class="text-right"><p class="font-weight-bold">{{mat.name}}</p></div>
+            <div class="text-left row edit-delete">
+                <div class="edit"><a href="{% url 'edit_material' mat.pk %}">تعديل</a></div>
+                <div class="delete"><a href="{% url 'delete_material' mat.pk %}">حذف</a></div>
+            </div>
+        </div>
+        <hr>
+        {% endfor %}
+        </div>
+    {% endif %}
+</div>    
+{% endblock content %}

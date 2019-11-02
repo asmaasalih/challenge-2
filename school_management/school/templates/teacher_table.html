@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}جدول التدريس{% endblock title %}
+{% block content %}
+<div class="container" style="margin-top: 80px;">
+    <h1 class="text-center" style="margin-bottom: 30px;">عرض جدول التدريس</h1>
+    <div class="row" style="margin-bottom: 40px;">
+        <div class="col"> 
+            <div class="dropdown text-center">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    إختر المدرس
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    {% for teach in teachers %}
+                        <a class="dropdown-item" href="{% url 'teacher' teach.slug %}">{{ teach.name }}</a>
+                    {% endfor %}
+                </div>
+            </div> 
+        </div>
+    </div>
+    <div class="study-table">
+        <table class="table" style="text-align: center;">
+            <thead>
+                <tr>
+                    <th scope="col">المادة</th>
+                    <th scope="col">القسم</th>
+                    <th scope="col">التوقيت</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in teachertable %}
+                    <tr>
+                        <td>{{ item.material }}</td>
+                        <td>{{ item.category }}</td>
+                        <td>{{ item.time }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock content %}

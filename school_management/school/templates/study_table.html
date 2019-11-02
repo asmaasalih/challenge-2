@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}جدول الدراسة{% endblock title %}
+{% block content %}
+<div class="container" style="margin-top: 80px;">
+    <h1 class="text-center" style="margin-bottom: 30px;">عرض جدول الدروس</h1>
+    <div class="row" style="margin-bottom: 40px;">
+        <div class="col"> 
+            <div class="dropdown text-center">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    إختر القسم
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    {% for cat in categories %}
+                        <a class="dropdown-item" href="{% url 'studycategory' cat.slug %}">{{ cat.name }}</a>
+                    {% endfor %}
+                </div>
+            </div> 
+        </div>
+    </div>
+    <div class="study-table">
+        <table class="table" style="text-align: center;">
+            <thead>
+                <tr>
+                    <th scope="col">المادة</th>
+                    <th scope="col">المدرس</th>
+                    <th scope="col">التوقيت</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in studytable %}
+                    <tr>
+                        <td>{{ item.material }}</td>
+                        <td>{{ item.teacher }}</td>
+                        <td>{{ item.time }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock content %}

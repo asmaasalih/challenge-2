@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}تعديل المادة{% endblock title %}
+{% block content %}
+<div class="container text-center">
+        <form method="post" action="">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit" class="btn btn-primary">تعديل</button>
+        </form>
+</div> 
+{% endblock content %}       

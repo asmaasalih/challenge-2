@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block title %}إضافه قسم{% endblock title %}
+{% block content %}
+<div class="container text-center">
+    <form action="{% url 'add_category' %}" method="POST" class="">
+        {% crispy form %}
+        {% csrf_token %}
+    </form>
+</div>
+{% endblock content %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block title %}إضافة مدرس{% endblock title %}
+{% block content %}
+<div class="container text-center">
+    <form action="/teachers/add_teacher/" method="POST">
+        {{form}}
+        {% csrf_token %}
+        <input type="submit" value="إضافة">
+    </form>
+</div>
+{% endblock content %}    

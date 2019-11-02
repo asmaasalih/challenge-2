@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+}
+.home-container{
+    margin-top: 500px;
+    margin-left: auto;
+    text-align: center;
+
+}
+.navigation{
+    margin-top: 40px;
+    position: relative;
+    top: 50px;
+    left: 400px;
+}
+.study-link{
+    border-radius: 15px;
+    padding: 13px;
+    width: 300px;
+    font-size: 22px;
+    float: left;
+    text-align: center;
+    background-color: rgb(189, 178, 184);
+    margin-right: 20px;
+    overflow: hidden;
+}
+.study-link a{
+    text-decoration: none;
+    color: black;
+}
+.teacher-link{
+    border-radius: 15px;
+    padding: 13px;
+    width: 300px;
+    font-size: 22px;
+    float: left;
+    text-align: center;
+    background-color: rgb(189, 178, 184);
+    margin-right: 20px;
+    overflow: hidden;
+}
+.teacher-link a{
+    text-decoration: none;
+    color: black;
+}
+.navbar{
+    background-color: rgb(189, 178, 184) !important;
+}
+.dropdown .btn{
+    width: 300px;
+    background-color: rgb(189, 178, 184) ;
+}
+.dropdown-menu{
+    width: 300px;
+}
+.navo{
+    width: 400px;
+    list-style: none;
+    padding: 0;
+    margin: auto;
+    background-color: #ffffff;
+    text-align: center;
+    border: 1px solid #cccccc;
+    border-radius: 7px;
+}
+.navo li{
+    display: inline-block;
+}
+.navo li a {
+    text-decoration: none;
+    font-size: 20px;
+    text-transform: capitalize;
+    color: #424040;
+    transition-duration: 0.4s;
+    display: block;
+    padding: 10px 20px;
+}
+.navo li a:hover,
+.active {
+    background-color: rgb(96, 102, 100);
+    color: white !important;
+}
+.dark-area{
+    margin-top: 20px;
+    background-color: rgb(189, 178, 184);
+    padding: 20px;
+    border-radius: 8px;
+}
+.add-btn{
+    width: 100px;
+    padding: 8px;
+    background-color: rgb(38, 168, 20);
+    border-radius: 10px;
+    text-align: center !important;
+    margin-bottom: 20px;
+
+}
+.add-btn a{
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    margin: auto;
+}
+.edit-delete{
+    text-align: left !important;
+}
+.edit{
+    width: 80px;
+    padding: 8px;
+    background-color: rgb(41, 20, 233);
+    border-radius: 10px;
+    text-align: center !important;
+}
+.edit a{
+    color: white;
+    text-decoration: none;
+}
+.delete{
+    width: 80px;
+    padding: 8px;
+    margin-right: 5px;
+    background-color: rgb(221, 79, 79);
+    border-radius: 10px;
+    text-align: center !important;
+}
+.delete a{
+    color: white;
+    text-decoration: none;
+}
